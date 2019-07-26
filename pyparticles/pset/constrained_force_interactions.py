@@ -30,7 +30,7 @@ class ConstrainedForceInteractions ( ct.Constraint ):
         
         self.__S = dok.dok_matrix( (1,1) , dtype=np.byte )
         
-        if pset != None :
+        if pset  is not None :
             self.pset = pset 
         
         

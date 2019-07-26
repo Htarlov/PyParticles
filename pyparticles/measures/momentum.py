@@ -25,7 +25,7 @@ class MomentumSystem( me.Measure ):
     """
     def __init__( self , pset=None ):
         
-        if pset != None :
+        if pset  is not None :
             self.__P = np.zeros(( pset.dim ))
         else :
             self.__P = None
@@ -92,9 +92,9 @@ class MomentumParticles( me.MeasureParticles ):
     """
     def __init__( self , pset=None , force=None , subset=None , model="part_by_part" ):
       
-        if pset != None and model == "subsystem" :
+        if pset  is not None and model == "subsystem" :
             self.__P = np.zeros(( pset.dim ))
-        elif pset != None and model == "part_by_part" and subset != None :
+        elif pset  is not None and model == "part_by_part" and subset  is not None :
             self.__P = np.zeros(( len(subset) , pset.dim ))
         else :
             self.__P = None

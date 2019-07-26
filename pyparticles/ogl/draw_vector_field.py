@@ -50,7 +50,7 @@ class DrawVectorField( object ):
         
     def __del__(self):
         for key in self.__fields.keys() :
-            if self.__fields[key]["display_list"] != None :
+            if self.__fields[key]["display_list"]  is not None :
                 glDeleteLists( self.__fields[key]["display_list"] , 1 )
     
     
@@ -115,10 +115,10 @@ class DrawVectorField( object ):
         | V : (n by DIM) resulting vector field
         | RGBA : (n by 4) colors array
         """
-        if key == None :
+        if key  is None :
             key = str( random.randint( 0 , 2**64 ) )
         
-        if color_fun == None :
+        if color_fun  is None :
             color_fun = self._default_color
             
         self.__fields[key] = { "fun": fun , 
@@ -210,7 +210,7 @@ class DrawVectorField( object ):
     def draw(self):
         for key in self.__fields.keys() :
             
-            if self.__fields[key]["display_list"] != None :
+            if self.__fields[key]["display_list"]  is not None :
                 glCallList( self.__fields[key]["display_list"] )
             else :
                 self._draw_field(key)

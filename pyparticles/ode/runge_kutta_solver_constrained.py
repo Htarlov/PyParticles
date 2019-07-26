@@ -25,7 +25,7 @@
 #    def __init__( self , force , p_set , dt , x_constraint=None , v_constraint=None ):
 #        super(RungeKuttaSolverConstrained,self).__init__( force , p_set , dt , x_constraint=None , v_constraint=None )
 #        
-#        if x_constraint != None :
+#        if x_constraint is not None :
 #            self.x_constraint = x_constraint
 #            
 #        self.__Kv1 = np.zeros( self.force.A.shape )

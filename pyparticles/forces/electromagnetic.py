@@ -50,7 +50,7 @@ class Electromagnetic( fr.Force ) :
         
         self.__Cr = np.zeros( ( size , dim ) )
         
-        if m != None :
+        if m  is not None :
             self.set_masses( m )
           
     def set_masses( self , m ):

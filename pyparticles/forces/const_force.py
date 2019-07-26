@@ -36,7 +36,7 @@ class ConstForce( fr.Force ) :
         self.__UF = np.array( u_force )
         self.__A = np.zeros( ( size , dim ) )
         self.__M = np.zeros( ( size , 1 ) )
-        if m != None :
+        if m  is not None :
             self.set_messes( m )
             
         self.__A[:] = self.__UF

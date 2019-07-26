@@ -28,7 +28,7 @@
 #        
 #        self.__mid_pset = ps.ParticlesSet( p_set.size , p_set.dim )
 # 
-#        if x_constraint != None :
+#        if x_constraint is not None :
 #            self.x_constraint = x_constraint
 #    
 #    

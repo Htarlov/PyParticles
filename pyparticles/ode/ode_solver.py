@@ -119,7 +119,7 @@ class OdeSolver(object) :
         Perform an integration step. If the dt is not given (reccomended) it uses the stored *dt*.
         You must alway use this method for executing a step.
         """
-        if dt == None:
+        if dt  is None:
             dt = self.dt
         
         self.__sim_time.time += dt

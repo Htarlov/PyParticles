@@ -56,7 +56,7 @@ class Damping( fr.Force ) :
         self.__F = np.zeros( ( size , dim ) )
                 
         self.__M = np.zeros( ( size , 1 ) )
-        if m != None :
+        if m  is not None :
             self.set_masses( m )
         
         
@@ -107,7 +107,7 @@ class DampingOCL( fr.Force ) :
         self.__dim = np.int( dim )
         self.__size = np.int( size )
         
-        if ocl_context == None :
+        if ocl_context  is None :
             self.__occ = occ.OpenCLcontext( size , dim , ( occ.OCLC_V | occ.OCLC_A | occ.OCLC_M )  )
         else :
             self.__occ = ocl_context        
@@ -119,7 +119,7 @@ class DampingOCL( fr.Force ) :
         self.__A = np.zeros( ( size , dim ) , dtype=self.__occ.dtype )
         self.__F = np.zeros( ( size , dim ) , dtype=self.__occ.dtype )
                         
-        if m != None :
+        if m  is not None :
             self.set_masses( m )
         
         self.__init_prog_cl()

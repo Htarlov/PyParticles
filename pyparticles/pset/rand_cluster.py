@@ -78,10 +78,10 @@ class RandCluster( clu.Cluster ):
         if M is not None:
             M[si:ei,0] = mass_rng[0] + randg(n)*( mass_rng[1] - mass_rng[0] )
             
-        if V != None and "bomb" in vel_mdl :
+        if V  is not None and "bomb" in vel_mdl :
             self.bomb_vel( X , V , n=n , start_indx=start_indx , centre=centre , randg=randg , vel_rng=vel_rng)
             
-        if V != None and "const" in vel_mdl :
+        if V  is not None and "const" in vel_mdl :
             self.const_vel( X , V , n=n , start_indx=start_indx , randg=randg , vel_rng=vel_rng , vel_dir=vel_dir )
     
         

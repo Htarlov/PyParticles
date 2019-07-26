@@ -130,17 +130,17 @@ class TreeElement( object ):
         
         
     def insert_particle( self , pset , i ) :
-        if self.particle == None and self.__tree == None :
+        if self.particle  is None and self.__tree  is None :
             self.__particle = i
             self.__M = pset.M[i]
             self.__centre_of_mass = pset.X[i,:]
             self.__part_cnt = 1
             return
         
-        elif self.particle != None and self.__tree == None :
+        elif self.particle  is not None and self.__tree  is None :
             self.add_sub_trees()
             
-        elif self.particle != None and self.__tree != None :
+        elif self.particle  is not None and self.__tree  is not None :
             pass ## it's only for testing the coherence of the tree structure
         
         else :
@@ -217,11 +217,11 @@ class TreeElement( object ):
             if distance( pset.X[tree.particle,:] , X ) <= r :
                 res_list.append( tree.particle )
             
-            if tree.__tree == None :
+            if tree.__tree  is None :
                 continue
             
             for t in tree.__tree:
-                if t.particle != None and box_intersects_sphere( t.min_vertex , t.max_vertex , X , r ) :
+                if t.particle  is not None and box_intersects_sphere( t.min_vertex , t.max_vertex , X , r ) :
                     cand_queue.append( t )
                             
                 
@@ -233,7 +233,7 @@ class TreeElement( object ):
             pset: the particles set
             d:  current depth (1 for the first node)
         """
-        if self.__particle == None  :
+        if self.__particle  is None  :
             return 
         
         vrtx  = tuple(i for i in self.__ref_vertex)
@@ -252,7 +252,7 @@ class TreeElement( object ):
         print( "%s centre of mass: %s " % ( spc*d , cm ) )
         
         mx = d
-        if self.__tree != None:
+        if self.__tree  is not None:
             for tr in self.__tree :
                 mx = max ( tr.print_tree( pset , d+1 ) , mx )
             
@@ -264,7 +264,7 @@ class TreeElement( object ):
         Compute and returns the maximal depth of the octree
         """
         mx = d
-        if self.__tree != None:
+        if self.__tree  is not None:
             for tr in self.__tree :
                 mx = max ( tr.depth( d+1 ) , mx )
             
@@ -343,7 +343,7 @@ class OcTree ( object ):
         
         res_list = []
         
-        if self.__tree == None :
+        if self.__tree  is None :
             return np.array(res_list)
         
         if not self.__tree.is_in( X ):
@@ -366,7 +366,7 @@ class OcTree ( object ):
            ==== ============================================
         """
         
-        if self.__tree == None :
+        if self.__tree  is None :
             self.__tree = TreeElement()
         else :
             del self.__tree
@@ -427,7 +427,7 @@ class OcTree ( object ):
             ========= ============================================
         """
         
-        if self.__tree == None :
+        if self.__tree  is None :
             self.__tree = TreeElement()
         else :
             del self.__tree

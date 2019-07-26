@@ -28,7 +28,7 @@ class AxisOgl(object):
         self.__dl_axis = None
     
     def __del__(self):
-        if self.__dl_axis != None :
+        if self.__dl_axis  is not None :
             glDeleteLists( self.__dl_axis , 1 )
     
     def ogl_init( self ):
@@ -70,7 +70,7 @@ class AxisOgl(object):
     
     def draw_plane( self , plane="xy", color=( 0.7 , 0.7 , 0.7 , 0.3 ) , leng=None ):
         
-        if leng == None :
+        if leng  is None :
             leng = self.axis_len
             
         
@@ -157,7 +157,7 @@ class AxisOgl(object):
         
     def draw_arrow( self , color , axis , leng=None ):
         
-        if leng == None :
+        if leng  is None :
             leng = self.axis_len
             
         arrh = leng * 0.1

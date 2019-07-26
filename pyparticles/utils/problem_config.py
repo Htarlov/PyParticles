@@ -530,7 +530,7 @@ class ParticlesConfig(object):
         for se in l_sec :
             m = re.search( r"(^rand_cluster_\w+)" , se )
             
-            if m != None :
+            if m  is not None :
                 sect = m.group(1)
                 print(" setup - rand cluster - name : %s " % sect )
                 

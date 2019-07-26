@@ -59,7 +59,7 @@ class ConstrainedX ( ct.Constraint ):
             return 
         
         
-        if  self.__X_cr == None :
+        if  self.__X_cr  is None :
             self.__X_cr = np.array( constr )
             self.__X_cr_i = np.array( indx , dtype=np.int64 )
         else :
@@ -75,10 +75,10 @@ class ConstrainedX ( ct.Constraint ):
         """
         If possible it tries to use a slice for the free indices 
         """
-        r = list( range( self.pset.size ) )
+        r = list(range( self.pset.size ))
         
         if isinstance( self.__X_cr_i , slice ):
-            ra = range( self.__X_cr_i.start , self.__X_cr_i.stop )
+            ra = list(range( self.__X_cr_i.start , self.__X_cr_i.stop ))
         else:
             ra = self.__X_cr_i
         

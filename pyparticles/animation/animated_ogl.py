@@ -234,7 +234,7 @@ def KeyPressed( c , x , y ):
         KeyPressed.animation.light = False
         
     if c == 'v' :
-        KeyPressed.animation.draw_vector_field = ( not KeyPressed.animation.draw_vector_field ) and ( KeyPressed.animation.vector_field != None )
+        KeyPressed.animation.draw_vector_field = ( not KeyPressed.animation.draw_vector_field ) and ( KeyPressed.animation.vector_field  is not None )
         
         
 
@@ -571,7 +571,7 @@ class AnimatedGl( pan.Animation ):
     
     def add_vector_field_fun( self , fun ,  unit , density=1.0 , color_fun=None ):
         
-        if self.vector_field == None :
+        if self.vector_field  is None :
             
             lims = [ self.xlim[0] , self.xlim[1] , self.ylim[0] , self.ylim[1] , self.zlim[0] , self.zlim[1] ]
             
@@ -663,7 +663,7 @@ class AnimatedGl( pan.Animation ):
             self.rot_matrix = glGetFloatv( GL_MODELVIEW_MATRIX )
             glPopMatrix()
             
-        if self.vector_field != None :
+        if self.vector_field  is not None :
             self.vector_field.ogl_init()
         
         try :            
@@ -678,7 +678,7 @@ class AnimatedGl( pan.Animation ):
         
         self.ode_solver.step()
         self.perform_measurement()
-                
+        
         self.update_fps()
         
         return self.ode_solver.steps_cnt

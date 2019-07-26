@@ -57,7 +57,7 @@ class StormerVerletSolverConstrained( os.OdeSolverConstrained ) :
         self.__pset_m1 = ps.ParticlesSet( p_set.size , p_set.dim , mass=False , velocity=False )
         self.__pset_tmp = ps.ParticlesSet( p_set.size , p_set.dim , mass=False , velocity=False )
         
-        if x_constraint != None :
+        if x_constraint is not None :
             self.x_constraint = x_constraint
 
     def get_x_constraint(self):

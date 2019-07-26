@@ -113,13 +113,13 @@ class OpenCLcontext( object ):
         :param dtype: (Dafault: current) The dtype of the new array, if not specified by default it uses the context dtype
         """
         
-        if dim == None :
+        if dim  is None :
             dim = self.__dim        
         
-        if size == None :
+        if size  is None :
             size = self.__size
             
-        if dtype == None :
+        if dtype  is None :
             dtype = self.dtype 
             
             

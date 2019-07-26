@@ -86,13 +86,13 @@ class DrawParticlesGL(object):
         
         
     def __del__(self):
-        if self.__sph_dl != None :
+        if self.__sph_dl  is not None :
             glDeleteLists( self.__sph_dl , 1 )
         
-        if self.__tea_dl != None :
+        if self.__tea_dl  is not None :
             glDeleteLists( self.__tea_dl , 1 )
             
-        if self.__pt_dl != None :
+        if self.__pt_dl  is not None :
             glDeleteLists( self.__pt_dl , 1 )
     
     
@@ -261,7 +261,7 @@ class DrawParticlesGL(object):
             self.__indices = np.arange( self.pset.size * 3 , dtype=np.uint )
             self.__init_vect_fl = True
         
-        if not self.__vect_color_fun_fl and self.__vect_color_fun != None :
+        if not self.__vect_color_fun_fl and self.__vect_color_fun  is not None :
             self.__color_vect = np.zeros(( self.pset.size , 4 ))
             self.__vect_color_fun( self.__color_vect , self.pset )
             self.__vect_color_fun_fl = True

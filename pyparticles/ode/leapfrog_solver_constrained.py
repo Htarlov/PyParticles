@@ -24,7 +24,7 @@
 #        super(LeapfrogSolverConstrained,self).__init__( force , p_set , dt , x_constraint=None , v_constraint=None )
 #        self.__Ai = np.zeros( self.force.A.shape )
 #        
-#        if x_constraint != None :
+#        if x_constraint is not None :
 #            self.x_constraint = x_constraint
 #        
 #    def get_x_constraint(self):

@@ -52,10 +52,10 @@ class ElectromagneticField( fr.Force ) :
         
         self.__Cr = np.zeros( ( size , dim ) )
         
-        if m != None :
+        if m  is not None :
             self.set_masses( m )
         
-        if q != None :
+        if q  is not None :
             self.set_charges( q )
             
         self.__el_fields = dict()
@@ -78,7 +78,7 @@ class ElectromagneticField( fr.Force ) :
         |  E is a n by 3 numpy array of vectors used for the resulting filed.
         |  X is a n by 3 numpy array of coordinates
         """
-        if key == None :
+        if key  is None :
             key = str( random.randint( 0 , 2**64 ) )
             
         self.__el_fields[key] = ef
@@ -89,7 +89,7 @@ class ElectromagneticField( fr.Force ) :
         r"""
         Append a vector field funcion to the list of megnetic field funtions.
         
-        It return the key used to identify the funtion, if key == None it uses a random number.
+        It return the key used to identify the funtion, if key  is None it uses a random number.
         
         The filed function must be in the form
         | bf( B , X )
@@ -98,7 +98,7 @@ class ElectromagneticField( fr.Force ) :
         |  B is a n by 3 numpy array of vectors used for the resulting filed.
         |  X is a n by 3 numpy array of coordinates
         """
-        if key == None :
+        if key  is None :
             key = str( random.randint( 0 , 2**64 ) )
             
         self.__ma_fields[key] = bf

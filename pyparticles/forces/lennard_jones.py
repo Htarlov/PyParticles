@@ -52,13 +52,13 @@ class LenardJones( fr.Force ) :
 
         self.__M = np.zeros( ( size , 1 ) )
         
-        self.__pF = np.zeros(( (size**2-size)/2 ))
+        self.__pF = np.zeros(( (size**2-size)//2 ))
         
         self.__V = np.zeros( ( size , size ) )
         
         self.__A = np.zeros( ( size , dim ) )
         
-        if m != None :
+        if m  is not None :
             self.set_masses( m )
         
         

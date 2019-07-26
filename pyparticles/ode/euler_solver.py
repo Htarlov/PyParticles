@@ -44,7 +44,7 @@ class EulerSolverConstrained( os.OdeSolverConstrained ) :
     def __init__( self , force , p_set , dt , x_constraint=None , v_constraint=None ):
         super(EulerSolverConstrained,self).__init__( force , p_set , dt , x_constraint=None , v_constraint=None )
         
-        if x_constraint != None :
+        if x_constraint is not None :
             self.x_constraint = x_constraint
         
 
@@ -75,7 +75,7 @@ class EulerSolverOCL( os.OdeSolver ) :
     def __init__( self , force , p_set , dt , ocl_context=None ):
         super(EulerSolverOCL,self).__init__( force , p_set , dt )
         
-        if ocl_context == None :
+        if ocl_context  is None :
             self.__occ = occ.OpenCLcontext( self.pset.size , self.pset.dim , ( occ.OCLC_X | occ.OCLC_V | occ.OCLC_A )  )
         else :
             self.__occ = ocl_context

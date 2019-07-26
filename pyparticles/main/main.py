@@ -169,7 +169,7 @@ def main():
         grav.gravity_cluster()
         return       
     
-    if options.path_name == None or options.demo == "solar_system":
+    if options.path_name  is None or options.demo == "solar_system":
         
         print("")
         print("Start the simulation example:")
@@ -187,7 +187,7 @@ def main():
     
     
     
-    if options.path_name != None :
+    if options.path_name  is not None :
         
         cfg.read_config( options.path_name )
         ( an , pset , force , ode_solver ) = cfg.build_problem()

@@ -54,7 +54,7 @@ class PseudoBubble( fr.Force ) :
         
         self.__V = np.zeros( ( size , size ) )
         
-        if m != None :
+        if m  is not None :
             self.set_messes( m )
         
     
@@ -104,7 +104,7 @@ class PseudoBubbleOCL( fr.Force ) :
         self.__dim = np.int( dim )
         self.__size = np.int( size )
         
-        if ocl_context == None :
+        if ocl_context  is None :
             self.__occ = occ.OpenCLcontext( size , dim , ( occ.OCLC_X | occ.OCLC_A | occ.OCLC_M )  )
         else :
             self.__occ = ocl_context    
@@ -114,7 +114,7 @@ class PseudoBubbleOCL( fr.Force ) :
         
         self.__A = np.zeros( ( size , dim ) , dtype=self.__occ.dtype )
         
-        if m != None :
+        if m  is not None :
             self.__occ.M_cla.set( self.__dtype( m ) , queue=self.__occ.CL_queue )
             
         self.__init_prog_cl()
@@ -217,7 +217,7 @@ class PseudoBubbleFastOCL( fr.Force ) :
         self.__dim = np.int( dim )
         self.__size = np.int( size )
         
-        if ocl_context == None :
+        if ocl_context  is None :
             self.__occ = occ.OpenCLcontext( size , dim , ( occ.OCLC_X | occ.OCLC_A | occ.OCLC_M )  )
         else :
             self.__occ = ocl_context
@@ -236,7 +236,7 @@ class PseudoBubbleFastOCL( fr.Force ) :
         self.__sub_d_bd[:] = np.arange( self.__n_sub_dom + 1 ) * ( 2.0 * self.__R )
         self.__sub_d_ind = np.zeros( self.__n_sub_dom + 1 , dtype=np.uint32 )
         
-        if m != None :
+        if m  is not None :
             self.__occ.M_cla.set( self.__dtype( m ) , queue=self.__occ.CL_queue )
             
         self.__init_prog_cl()

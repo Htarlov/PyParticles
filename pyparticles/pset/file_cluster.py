@@ -116,7 +116,7 @@ class FileCluster(object):
         except:
             pass
         
-        if pset.label != None :
+        if pset.label  is not None :
             head.append( "Label" )
         
         csv_w.writerow( head )

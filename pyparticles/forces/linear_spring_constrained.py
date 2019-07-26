@@ -36,7 +36,7 @@ class LinearSpringConstrained ( fcr.ForceConstrained ):
         self.__Fm2 = csr.csr_matrix( ( size , size ) )
                 
         self.__M = np.zeros( ( size , 1 ) )
-        if len(m) != 0 :
+        if m  is not None and len(m) != 0:
             self.set_masses( m )
         
     def set_masses( self , m ):

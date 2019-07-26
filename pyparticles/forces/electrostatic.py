@@ -48,10 +48,10 @@ class Electrostatic( fr.Force ) :
         self.__Q = np.zeros( ( size , size ) )
         self.__M = np.zeros( ( size , 1 ) )
         
-        if m != None :
+        if m  is not None :
             self.set_masses( m )
         
-        if q != None :
+        if q  is not None :
             self.set_charges( q )
         
     
