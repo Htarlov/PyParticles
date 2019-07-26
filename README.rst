@@ -1,4 +1,4 @@
-Download
+Notice
 --------
 
 Source code in pyparticles folder updated for Python 3.7. 
