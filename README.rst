@@ -1,3 +1,9 @@
+Download
+--------
+
+Source code in pyparticles folder updated for Python 3.7. 
+TAR GZ archive not updated.
+
 PyParticles 
 ===========
 
@@ -13,7 +19,7 @@ Furthermore is to provide a basic application for the implementation of simple m
 Download
 --------
 
-`PyParticles v0.3.5 tgz <http://sourceforge.net/projects/pyparticles/files/PyParticles-0.3.5/pyparticles-0.3.5.tar.gz>`_
+Original `PyParticles v0.3.5 tgz <http://sourceforge.net/projects/pyparticles/files/PyParticles-0.3.5/pyparticles-0.3.5.tar.gz>`_
 
 
 Features
